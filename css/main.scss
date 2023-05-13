@@ -25,7 +25,6 @@ body {
 a {
    text-decoration: none;
    color: var(--text-color);
-   -webkit-tap-highlight-color: transparent;
 }
 
 i {
@@ -54,6 +53,10 @@ input, button, textarea, select {
     scroll-behavior: auto !important;
   }
 }
+
+* { -webkit-tap-highlight-color: transparent; }
+input, textarea, button, select, a { -webkit-tap-highlight-color: transparent; }
+a:focus, a:visited, a:active { -webkit-tap-highlight-color: transparent;}
 
 // ---------
 // ---------
@@ -635,7 +638,7 @@ section.services {
 
          .services-card {
             max-width: 30rem;
-            height: 17rem;
+            height: 22rem;
             
             padding: 2rem;
             border: 1px solid var(--text-color);
@@ -1058,6 +1061,16 @@ section.footer {
       .hero-bottom {
          .hero-bottom--cta {
             flex-direction: row;
+         }
+      }
+   }
+
+   section.services {
+      .services-right {
+         .services-cards {
+            .services-card {
+               height: 17rem;
+            }
          }
       }
    }

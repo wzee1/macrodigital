@@ -23,7 +23,6 @@ body {
 a {
   text-decoration: none;
   color: var(--text-color);
-  -webkit-tap-highlight-color: transparent;
 }
 
 i {
@@ -53,6 +52,18 @@ input, button, textarea, select {
     scroll-behavior: auto !important;
   }
 }
+* {
+  -webkit-tap-highlight-color: transparent;
+}
+
+input, textarea, button, select, a {
+  -webkit-tap-highlight-color: transparent;
+}
+
+a:focus, a:visited, a:active {
+  -webkit-tap-highlight-color: transparent;
+}
+
 html {
   scroll-behavior: smooth;
   scroll-padding: 7rem;
@@ -525,7 +536,7 @@ section.services .services-right .services-cards {
 }
 section.services .services-right .services-cards .services-card {
   max-width: 30rem;
-  height: 17rem;
+  height: 22rem;
   padding: 2rem;
   border: 1px solid var(--text-color);
   border-radius: 0.75rem;
@@ -841,6 +852,9 @@ section.footer .footer-copyright {
 @media screen and (min-width: 500px) {
   section.hero .hero-bottom .hero-bottom--cta {
     flex-direction: row;
+  }
+  section.services .services-right .services-cards .services-card {
+    height: 17rem;
   }
 }
 @media screen and (min-width: 700px) {
