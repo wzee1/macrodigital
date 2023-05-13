@@ -383,7 +383,6 @@ section.hero .hero-top {
   flex-direction: column;
 }
 section.hero .hero-top .hero-top--header {
-  margin-inline: 3rem;
   margin-bottom: 2.5rem;
   font-size: 3.25rem;
   line-height: 0.9;
@@ -401,6 +400,9 @@ section.hero .hero-bottom .hero-bottom--info {
 }
 section.hero .hero-bottom .hero-bottom--cta {
   display: flex;
+  flex-direction: column;
+  width: -moz-fit-content;
+  width: fit-content;
   gap: 1rem;
   font-size: 1.25rem;
 }
@@ -712,6 +714,7 @@ section.contact .contact-form .contact-form--dropdown select {
   padding-right: 1rem;
   border: 2px solid #D5D5D7;
   border-radius: 0.25rem;
+  background-color: white;
   color: #A6A8A6;
   appearance: none;
   -webkit-appearance: none;
@@ -820,6 +823,11 @@ section.footer .footer-copyright {
 @media screen and (max-width: 1415px) {
   header.nav-desktop {
     padding-inline: 2rem;
+  }
+}
+@media screen and (min-width: 500px) {
+  section.hero .hero-top .hero-top--header {
+    margin-inline: 3rem;
   }
 }
 @media screen and (min-width: 2560px) {

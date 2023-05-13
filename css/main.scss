@@ -443,7 +443,7 @@ section.hero {
       flex-direction: column;
 
       .hero-top--header {
-         margin-inline: 3rem;
+         //margin-inline: 3rem;  --> apply it at around 500 px
          margin-bottom: 2.5rem;
 
          font-size: 3.25rem;
@@ -467,6 +467,8 @@ section.hero {
 
       .hero-bottom--cta {
          display: flex;
+         flex-direction: column;
+         width: fit-content;
          gap: 1rem;
          font-size: 1.25rem;
       }
@@ -888,6 +890,7 @@ section.contact {
             border: 2px solid #D5D5D7;
             border-radius: .25rem;
 
+            background-color: white;
             color: #A6A8A6;
 
             // Arrow-down
@@ -1035,11 +1038,23 @@ section.footer {
 // ---------
 // Bug Fixes
 // ---------
+
 @media screen and (max-width: 1415px) {
    header.nav-desktop {
       padding-inline: 2rem;
    }
 }
+
+@media screen and (min-width: 500px) {
+   section.hero {
+      .hero-top {
+         .hero-top--header {
+            margin-inline: 3rem;
+         }
+      }
+   }
+}
+
 
 // --------------------------------
 // Media Queries for Large Displays
