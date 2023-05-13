@@ -25,6 +25,7 @@ body {
 a {
    text-decoration: none;
    color: var(--text-color);
+   -webkit-tap-highlight-color: transparent;
 }
 
 i {
@@ -65,7 +66,7 @@ input, button, textarea, select {
 
 html {
    scroll-behavior: smooth;
-   scroll-padding: 4rem;
+   scroll-padding: 7rem;
    background-color: var(--bg-color);
    color: black;
    font-family: "Poppins", "sans-serif";
@@ -151,7 +152,7 @@ html {
 header.nav-desktop {
    margin-inline: auto;
    padding-block: 2rem;
-   padding-inline: calc((100vw - 1350px)/2);
+   padding-left: calc((100vw - 1350px)/2);
 }
 
 .button {
@@ -165,6 +166,12 @@ header.nav-desktop {
 .button-primary {
    background-color: rgb(53,53,53);
    color: white;
+   transition: .5s;
+
+   &:hover {
+      background-color: var(--color-primary);
+      color: var(--text-color);
+   }
 }
 
 .button-secondary {
@@ -172,6 +179,12 @@ header.nav-desktop {
    color: rgb(53,53,53);
    outline: 2px solid rgb(53,53,53);
    outline-offset: -2px;
+   transition: .5s;
+
+   &:hover {
+      background-color: rgb(53,53,53);
+      color: white;
+   }
 }
 
 // ----------
@@ -399,6 +412,7 @@ header.nav-desktop {
    ul {
       display: flex;
       gap: 2rem;
+      margin-right: 1rem;  // Fixing alignment issues due to scroll bar
 
       li {
          font-size: 1.1rem;
@@ -521,8 +535,11 @@ section.grow {
 
 section.portfolio {
    background-color: rgb(23,25,25);
-   color: white;
-   padding-block: 5rem;
+   
+   .portfolio-content {
+      color: white;
+      padding-block: 5rem;
+   }
 
    .portfolio-header {
       font-size: 2.25rem;
@@ -609,36 +626,51 @@ section.services {
       flex-direction: column;
       gap: 2rem;
 
-      .services-card {
-         padding: 2rem;
-         border: 1px solid var(--text-color);
-         border-radius: .75rem;
-         
-         box-shadow: 10px 5px 0 0 var(--text-color);
-         -webkit-box-shadow: 10px 5px 0 0 var(--text-color);
-         -moz-box-shadow: 10px 5px 0 0 var(--text-color);
-         
-         transition: .5s;
+      .services-cards {
+         display: flex;
+         justify-content: center;
+         align-items: center;
+         flex-direction: column;
+         gap: 2rem;
 
-         &:hover {
-            box-shadow: 0 0 0 0 transparent;
-            -webkit-box-shadow: 0 0 0 0 transparent;
-            -moz-box-shadow: 0 0 0 0 transparent;
-         }
-
-         .services-card--top {
-            display: flex;
-            justify-content: space-between;
-            align-items: center;
-            margin-bottom: 1.5rem;
-
-            .services-card--top--header {
-               font-size: 1.75rem;
-               line-height: 1.2;
+         .services-card {
+            max-width: 30rem;
+            height: 17rem;
+            
+            padding: 2rem;
+            border: 1px solid var(--text-color);
+            border-radius: .75rem;
+            
+            box-shadow: 10px 5px 0 0 var(--text-color);
+            -webkit-box-shadow: 10px 5px 0 0 var(--text-color);
+            -moz-box-shadow: 10px 5px 0 0 var(--text-color);
+            
+            transition: .5s;
+   
+            &:hover {
+               box-shadow: 0 0 0 0 transparent;
+               -webkit-box-shadow: 0 0 0 0 transparent;
+               -moz-box-shadow: 0 0 0 0 transparent;
+            }
+   
+            .services-card--top {
+               display: flex;
+               justify-content: space-between;
+               align-items: center;
+               margin-bottom: 1.5rem;
+   
+               .services-card--top--header {
+                  font-size: 1.75rem;
+                  line-height: 1.2;
+               }
+   
+               img {
+                  height: 2.8rem;
+               }
             }
 
-            img {
-               height: 2.8rem;
+            .services-card--info {
+               max-width: 75%;
             }
          }
       }
@@ -1017,35 +1049,164 @@ section.footer {
 // -------------
 // -------------
 
+@media screen and (max-width: 320px) { // Galaxy Fold
+   
+}
+
+@media screen and (min-width: 500px) {
+   section.hero {
+      .hero-bottom {
+         .hero-bottom--cta {
+            flex-direction: row;
+         }
+      }
+   }
+}
+
+@media screen and (min-width: 700px) {
+   section.hero {
+      .hero-top {
+         justify-content: space-between;
+         align-items: center;
+         flex-direction: row;
+
+         .hero-top--img {
+            height: 25vw;
+            width: auto;
+            margin: 0;
+         }
+      }
+
+      .hero-bottom {
+         flex-direction: row;
+      }
+   }
+
+   section.portfolio {
+      .portfolio-cards {
+         margin-inline: 5rem;
+      }
+   }
+
+   section.services {
+      .services-right {
+         margin-inline: 5rem;
+      }
+   }
+
+   section.packages {
+      .packages-cards {
+         margin-inline: 8rem;
+      }
+   }
+
+   section.contact {
+      max-width: 35rem;
+   }
+}
+
 @media screen and (min-width: 850px) { // Desktop
    header.nav-mobile {
       display: none;
    }
    
    header.nav-desktop {
-      display: flex; 
+      display: flex;
    }
 }
 
-@media screen and (max-width: 320px) { // Galaxy Fold
-   
+@media screen and (min-width: 850px) and (max-width: 949px) { // Between Tablet-Destkop Portfolio
+   section.portfolio {
+      .portfolio-cards {
+         margin-inline: 12rem;
+      }
+   }
 }
 
-@media screen and (min-width: 1024px) { // Desktop
+@media screen and (min-width: 952px) {
+   section.portfolio {
+      .portfolio-cards {
+         margin-inline: 0;
+         flex-direction: row;
+         align-items: baseline;
 
+         .portfolio-cards--card {
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            flex-direction: column;
+
+            .portfolio-cards--card--img {
+               height: 13rem;
+               width: auto;
+            }
+         }
+      }
+   }
+}
+
+@media screen and (min-width: 1157px) { // Services row
+   section.services {
+      .services-right {
+         max-width: unset;
+         align-items: baseline;
+         margin-inline: 0;
+         flex-direction: row;
+      }
+   }
+
+   section.packages {
+      .packages-cards {
+         margin-inline: 0;
+         align-items: baseline;
+         flex-direction: row;
+         
+         .packages-cards--card {
+            width: calc(100% * (1/2) - 10px - 1px)
+         }
+      }
+   }
+}
+
+@media screen and (min-width: 1415px) {
+   header.nav-desktop {
+      margin-inline: auto;
+      padding-block: 2rem;
+      padding-inline: calc((100vw - 1350px)/2);
+   }
+}
+
+@media screen and (min-width: 1540px) {
+   section.services {
+      flex-direction: row;
+      align-items: baseline;
+      gap: 5rem;
+
+      .services-left {
+         width: 30%;
+
+         .services-arrow {
+            img {
+               transform: unset;
+            }
+         }
+      }
+   }
 }
 
 // ---------
 // Bug Fixes
 // ---------
 
-@media screen and (max-width: 1415px) {
-   header.nav-desktop {
-      padding-inline: 2rem;
+@media screen and (min-width: 600px) and (max-width: 699px) {
+   section.packages {
+      .packages-cards {
+         margin-inline: 5rem;
+      }
    }
 }
 
-@media screen and (min-width: 500px) {
+@media screen and (min-width: 500px) and (max-width: 699px) {
    section.hero {
       .hero-top {
          .hero-top--header {
@@ -1055,6 +1216,11 @@ section.footer {
    }
 }
 
+@media screen and (max-width: 1415px) {
+   header.nav-desktop {
+      padding-inline: 2rem;
+   }
+}
 
 // --------------------------------
 // Media Queries for Large Displays
