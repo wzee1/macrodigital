@@ -85,8 +85,7 @@ html {
    --title-color: rgb(30 30 30);
    --text-color: rgb(30 30 30);
 
-
-
+   // For header
    --header-duration: 1s;
    --nav-duration: calc(var(--header-duration) / 4);
    --nav-ease: cubic-bezier(0.215, 0.61, 0.355, 1);
@@ -94,6 +93,9 @@ html {
    --font-primary: 'Poppins', sans-serif;
    --font-heading: 'Poppins', serif;
    --nav-font-size: 10vmin;
+
+   // For bug fix
+   --package-height-fix: ; // Set in JS
 }
 
 body.dark-theme {
@@ -680,6 +682,22 @@ section.services {
    }
 }
 
+// Color changes for the last card
+.fourth-card {
+   background-color: rgb(37,37,37);
+   color: white;
+
+   box-shadow: 10px 5px 0 0 rgb(79,36,238) !important;
+   -webkit-box-shadow: 10px 5px 0 0 rgb(79,36,238) !important;
+   -moz-box-shadow: 10px 5px 0 0 rgb(79,36,238) !important;
+
+   &:hover {
+      box-shadow: 0 0 0 0 transparent !important;
+      -webkit-box-shadow: 0 0 0 0 transparent !important;
+      -moz-box-shadow: 0 0 0 0 transparent !important;
+   }
+}
+
 // ----------------
 // ----------------
 // Packages Section
@@ -1027,22 +1045,25 @@ section.footer {
    }
 
    .footer-infobox {
-      text-align: left;
+      ul {
+         text-align: left;
 
-      li {
-         display: flex;
-         align-items: center;
-         gap: 1rem;
-         margin-bottom: 1rem;
+         li {
+            display: flex;
+            align-items: center;
+            gap: 1rem;
+            margin-bottom: 1rem;
 
-         img {
-            height: 2rem;
+            img {
+               height: 2rem;
+            }
          }
       }
-   }
-
-   .footer-copyright {
-      margin-block: 5rem;
+      
+      .footer-copyright {
+         margin-block: 5rem;
+         text-align: center;
+      }
    }
 }
 
@@ -1052,8 +1073,214 @@ section.footer {
 // -------------
 // -------------
 
-@media screen and (max-width: 320px) { // Galaxy Fold
-   
+@media screen and (max-width: 390px) { // Galaxy Fold
+   section.hero {
+      text-align: center;
+
+      .hero-top {
+         .hero-top--header {
+            font-size: 2.25rem;
+            line-height: 1.1;
+         }
+      }
+
+      .hero-bottom {
+         .hero-bottom--info {
+            font-size: 1rem;
+         }
+
+         .hero-bottom--cta {
+            font-size: 1rem;
+            margin-inline: auto;
+         }
+      }
+   }
+
+   section.grow {
+      .grow-header--sub {
+         font-size: 1rem;
+         span {
+            font-size: 1.75rem;
+         }
+      }
+
+      .grow-header {
+         font-size: 1.75rem;
+      }
+
+      .grow-info {
+         font-size: 1rem;
+      }
+   }
+
+   section.portfolio {
+      text-align: center;
+
+      .portfolio-content {
+         .portfolio-header {
+            font-size: 1.75rem;
+            line-height: 1;
+         }
+
+         .portfolio-info {
+            font-size: 1rem;
+         }
+
+         .portfolio-cards {
+            .portfolio-cards--card {
+               .portfolio-cards--card--info {
+                  justify-content: center;
+                  flex-direction: column;
+                  gap: .5rem;
+               }
+            }
+         }
+      }
+   }
+
+   section.services {
+      text-align: center;
+
+      .services-header {
+         line-height: 1;
+         margin-bottom: 2rem !important;
+      }
+
+      .services-info {
+         font-size: 1rem !important;
+      }
+
+      .services-arrow {
+         justify-content: center;
+         font-size: 1rem !important;
+
+         img {
+            height: 1.25rem !important;
+         }
+      }
+
+      .services-cards {
+         .services-card {
+            padding: 1rem !important;
+
+            .services-card--top {
+               flex-direction: column;
+               gap: .75rem;
+
+               .services-card--top--header {
+                  font-size: 1.5rem !important;
+               }
+
+               img {
+                  height: 2rem !important;
+               }
+            }
+
+            .services-card--info {
+               max-width: 100% !important;
+               font-size: .95rem !important;
+            }
+         }
+      }
+   }
+
+   section.packages {
+      .packages-cards {
+         .packages-cards--card {
+            padding: 1rem !important;
+
+            .packages-cards--card--subheader {
+               font-size: 1.25rem !important;
+            }
+
+            .packages-cards--card--header {
+               font-size: 1.75rem !important;
+            }
+
+            .packages-cards--card--price {
+               font-size: 2rem !important;
+               
+               span {
+                  font-size: 1.5rem !important;
+               }
+            }
+
+            .packages-cards--card--priceInfo {
+               font-size: 1.25rem !important;
+            }
+
+            .packages-cards--card--info {
+               font-size: .9rem !important;
+            }
+
+            .packages-cards--card--perks {
+               font-size: .9rem !important;
+            }
+
+            a.button {
+               font-size: 1rem !important;
+            }
+         }
+      }
+   }
+
+   section.contact {
+      .contact-subheader {
+         font-size: 1rem;
+      }
+
+      img {
+         height: 1.25rem !important;
+      }
+
+      .contact-header {
+         font-size: 2rem;
+      }
+
+      .contact-info {
+         font-size: .9rem;
+      }
+
+      .contact-form {
+         .contact-form--dropdown--header {
+            span {
+               font-size: .55rem !important;
+            }
+         }
+
+         .contact-form-info {
+            font-size: .75rem !important;
+         }
+      }
+   }
+
+   section.footer {
+      footer {
+         .footer-left {
+            .footer-header {
+               margin-inline: 0;
+            }
+
+            .footer-info {
+               font-size: .9rem !important;
+            }
+
+            a.button {
+               font-size: 1rem !important;
+            }
+         }
+
+         .footer-right {
+            .footer-logo {
+               font-size: 3rem !important;
+            }
+
+            ul {
+               font-size: .8rem !important;
+            }
+         }
+      }
+   }
 }
 
 @media screen and (min-width: 500px) {
@@ -1095,6 +1322,13 @@ section.footer {
       }
    }
 
+   section.grow {
+      .grow-header {
+         font-size: 2.25rem;
+         line-height: 2.5rem;
+      }
+   }
+
    section.portfolio {
       .portfolio-cards {
          margin-inline: 5rem;
@@ -1108,14 +1342,32 @@ section.footer {
    }
 
    section.packages {
+      .packages-header {
+         font-size: 2.25rem;
+      }
+
       .packages-cards {
-         margin-inline: 8rem;
+         margin-inline: 5rem;
       }
    }
 
    section.contact {
       max-width: 35rem;
+      
+      .contact-subheader {
+         font-size: 1.875rem;
+         line-height: 2.25rem;
+      }
    }
+
+   section.footer {
+      .footer-logo {
+         font-size: 6rem;
+         line-height: .8;
+      }
+   }
+
+   // font-size: 2.25rem; line-height: 2.5rem;
 }
 
 @media screen and (min-width: 850px) { // Desktop
@@ -1125,6 +1377,90 @@ section.footer {
    
    header.nav-desktop {
       display: flex;
+   }
+
+   section.hero {
+      .hero-top {
+         .hero-top--header {
+            font-size: 4.5rem;
+         }
+      }
+   }
+
+   section.grow {
+      .grow-info {
+         font-size: 1.25rem;
+         width: 65%;
+      }
+   }
+
+   section.portfolio {
+      .portfolio-content {
+         .portfolio-header {
+            font-size: 3rem;
+         }
+
+         .portfolio-info {
+            font-size: 1.125rem;
+         }
+         
+         .portfolio-cards {
+            .portfolio-cards--card {
+               .portfolio-cards--card--header {
+                  font-size: 1.25rem;
+               }
+            }
+         }
+      }
+   }
+
+   section.services {
+      .services-left {
+         .services-header {
+            font-size: 3rem;
+         }
+      }
+   }
+
+   section.packages {
+      .packages-header {
+         font-size: 3rem;
+      }
+
+      .packages-info {
+         font-size: 1.25rem;
+      }
+
+      .packages-cards {
+         margin-inline: 8rem;
+      }
+   }
+
+   section.footer {
+      footer {
+         .footer-header {
+            font-size: 2.5rem;
+         }
+
+         .footer-info {
+            font-size: 1.25rem;
+         }
+
+         a.button {
+            font-size: 1.5rem;
+         }
+
+         .footer-logo {
+            font-size: 8rem;
+         }
+
+         .footer-infobox {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            font-size: 1.25rem;
+         }
+      }
    }
 }
 
@@ -1156,6 +1492,12 @@ section.footer {
          }
       }
    }
+
+   section.packages {
+      .packages-cards {
+         margin-inline: 12rem;
+      }
+   }
 }
 
 @media screen and (min-width: 1157px) { // Services row
@@ -1175,7 +1517,57 @@ section.footer {
          flex-direction: row;
          
          .packages-cards--card {
+            display: flex;
+            flex-direction: column;
+            justify-content: space-between;
             width: calc(100% * (1/2) - 10px - 1px)
+         }
+      }
+   }
+
+   .package-height-fix {
+      height: var(--package-height-fix);
+   }
+
+   section.footer {
+      padding-block: 3rem;
+
+      footer {
+         display: flex;
+         justify-content: space-between;
+         align-items: center;
+         flex-direction: row-reverse;
+         margin-block: 0;
+         gap: 5rem;
+
+         .footer-left {
+            width: 45%;
+
+            .footer-header {
+               font-size: 3.5rem;
+               margin-inline: 0;
+            }
+         }
+
+         .footer-divider {
+            position: absolute;
+            left: 50%;
+
+            height: 35rem;
+            width: .25rem;
+            background-color: white;
+            border-radius: 5rem;
+         }
+
+         .footer-right {
+            .footer-logo {
+               text-align: left;
+            }
+
+            .footer-infobox {
+               font-size: 1.125rem;
+               flex-direction: row;
+            }
          }
       }
    }
@@ -1224,6 +1616,18 @@ section.footer {
       .hero-top {
          .hero-top--header {
             margin-inline: 3rem;
+         }
+      }
+   }
+}
+
+@media screen and (min-width: 1222px) {
+   section.footer {
+      footer {
+         .footer-right {
+            .footer-infobox {
+               font-size: 1.25rem;
+            }
          }
       }
    }

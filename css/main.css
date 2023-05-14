@@ -88,6 +88,7 @@ html {
   --font-primary: "Poppins", sans-serif;
   --font-heading: "Poppins", serif;
   --nav-font-size: 10vmin;
+  --package-height-fix: ;
 }
 
 body.dark-theme {
@@ -567,6 +568,19 @@ section.services .services-right .services-cards .services-card .services-card--
   max-width: 75%;
 }
 
+.fourth-card {
+  background-color: rgb(37, 37, 37);
+  color: white;
+  box-shadow: 10px 5px 0 0 rgb(79, 36, 238) !important;
+  -webkit-box-shadow: 10px 5px 0 0 rgb(79, 36, 238) !important;
+  -moz-box-shadow: 10px 5px 0 0 rgb(79, 36, 238) !important;
+}
+.fourth-card:hover {
+  box-shadow: 0 0 0 0 transparent !important;
+  -webkit-box-shadow: 0 0 0 0 transparent !important;
+  -moz-box-shadow: 0 0 0 0 transparent !important;
+}
+
 section.packages {
   display: flex;
   justify-content: center;
@@ -833,22 +847,160 @@ section.footer .footer-logo {
   line-height: 0.8;
   margin-block: 5rem;
 }
-section.footer .footer-infobox {
+section.footer .footer-infobox ul {
   text-align: left;
 }
-section.footer .footer-infobox li {
+section.footer .footer-infobox ul li {
   display: flex;
   align-items: center;
   gap: 1rem;
   margin-bottom: 1rem;
 }
-section.footer .footer-infobox li img {
+section.footer .footer-infobox ul li img {
   height: 2rem;
 }
-section.footer .footer-copyright {
+section.footer .footer-infobox .footer-copyright {
   margin-block: 5rem;
+  text-align: center;
 }
 
+@media screen and (max-width: 390px) {
+  section.hero {
+    text-align: center;
+  }
+  section.hero .hero-top .hero-top--header {
+    font-size: 2.25rem;
+    line-height: 1.1;
+  }
+  section.hero .hero-bottom .hero-bottom--info {
+    font-size: 1rem;
+  }
+  section.hero .hero-bottom .hero-bottom--cta {
+    font-size: 1rem;
+    margin-inline: auto;
+  }
+  section.grow .grow-header--sub {
+    font-size: 1rem;
+  }
+  section.grow .grow-header--sub span {
+    font-size: 1.75rem;
+  }
+  section.grow .grow-header {
+    font-size: 1.75rem;
+  }
+  section.grow .grow-info {
+    font-size: 1rem;
+  }
+  section.portfolio {
+    text-align: center;
+  }
+  section.portfolio .portfolio-content .portfolio-header {
+    font-size: 1.75rem;
+    line-height: 1;
+  }
+  section.portfolio .portfolio-content .portfolio-info {
+    font-size: 1rem;
+  }
+  section.portfolio .portfolio-content .portfolio-cards .portfolio-cards--card .portfolio-cards--card--info {
+    justify-content: center;
+    flex-direction: column;
+    gap: 0.5rem;
+  }
+  section.services {
+    text-align: center;
+  }
+  section.services .services-header {
+    line-height: 1;
+    margin-bottom: 2rem !important;
+  }
+  section.services .services-info {
+    font-size: 1rem !important;
+  }
+  section.services .services-arrow {
+    justify-content: center;
+    font-size: 1rem !important;
+  }
+  section.services .services-arrow img {
+    height: 1.25rem !important;
+  }
+  section.services .services-cards .services-card {
+    padding: 1rem !important;
+  }
+  section.services .services-cards .services-card .services-card--top {
+    flex-direction: column;
+    gap: 0.75rem;
+  }
+  section.services .services-cards .services-card .services-card--top .services-card--top--header {
+    font-size: 1.5rem !important;
+  }
+  section.services .services-cards .services-card .services-card--top img {
+    height: 2rem !important;
+  }
+  section.services .services-cards .services-card .services-card--info {
+    max-width: 100% !important;
+    font-size: 0.95rem !important;
+  }
+  section.packages .packages-cards .packages-cards--card {
+    padding: 1rem !important;
+  }
+  section.packages .packages-cards .packages-cards--card .packages-cards--card--subheader {
+    font-size: 1.25rem !important;
+  }
+  section.packages .packages-cards .packages-cards--card .packages-cards--card--header {
+    font-size: 1.75rem !important;
+  }
+  section.packages .packages-cards .packages-cards--card .packages-cards--card--price {
+    font-size: 2rem !important;
+  }
+  section.packages .packages-cards .packages-cards--card .packages-cards--card--price span {
+    font-size: 1.5rem !important;
+  }
+  section.packages .packages-cards .packages-cards--card .packages-cards--card--priceInfo {
+    font-size: 1.25rem !important;
+  }
+  section.packages .packages-cards .packages-cards--card .packages-cards--card--info {
+    font-size: 0.9rem !important;
+  }
+  section.packages .packages-cards .packages-cards--card .packages-cards--card--perks {
+    font-size: 0.9rem !important;
+  }
+  section.packages .packages-cards .packages-cards--card a.button {
+    font-size: 1rem !important;
+  }
+  section.contact .contact-subheader {
+    font-size: 1rem;
+  }
+  section.contact img {
+    height: 1.25rem !important;
+  }
+  section.contact .contact-header {
+    font-size: 2rem;
+  }
+  section.contact .contact-info {
+    font-size: 0.9rem;
+  }
+  section.contact .contact-form .contact-form--dropdown--header span {
+    font-size: 0.55rem !important;
+  }
+  section.contact .contact-form .contact-form-info {
+    font-size: 0.75rem !important;
+  }
+  section.footer footer .footer-left .footer-header {
+    margin-inline: 0;
+  }
+  section.footer footer .footer-left .footer-info {
+    font-size: 0.9rem !important;
+  }
+  section.footer footer .footer-left a.button {
+    font-size: 1rem !important;
+  }
+  section.footer footer .footer-right .footer-logo {
+    font-size: 3rem !important;
+  }
+  section.footer footer .footer-right ul {
+    font-size: 0.8rem !important;
+  }
+}
 @media screen and (min-width: 500px) {
   section.hero .hero-bottom .hero-bottom--cta {
     flex-direction: row;
@@ -871,17 +1023,32 @@ section.footer .footer-copyright {
   section.hero .hero-bottom {
     flex-direction: row;
   }
+  section.grow .grow-header {
+    font-size: 2.25rem;
+    line-height: 2.5rem;
+  }
   section.portfolio .portfolio-cards {
     margin-inline: 5rem;
   }
   section.services .services-right {
     margin-inline: 5rem;
   }
+  section.packages .packages-header {
+    font-size: 2.25rem;
+  }
   section.packages .packages-cards {
-    margin-inline: 8rem;
+    margin-inline: 5rem;
   }
   section.contact {
     max-width: 35rem;
+  }
+  section.contact .contact-subheader {
+    font-size: 1.875rem;
+    line-height: 2.25rem;
+  }
+  section.footer .footer-logo {
+    font-size: 6rem;
+    line-height: 0.8;
   }
 }
 @media screen and (min-width: 850px) {
@@ -890,6 +1057,52 @@ section.footer .footer-copyright {
   }
   header.nav-desktop {
     display: flex;
+  }
+  section.hero .hero-top .hero-top--header {
+    font-size: 4.5rem;
+  }
+  section.grow .grow-info {
+    font-size: 1.25rem;
+    width: 65%;
+  }
+  section.portfolio .portfolio-content .portfolio-header {
+    font-size: 3rem;
+  }
+  section.portfolio .portfolio-content .portfolio-info {
+    font-size: 1.125rem;
+  }
+  section.portfolio .portfolio-content .portfolio-cards .portfolio-cards--card .portfolio-cards--card--header {
+    font-size: 1.25rem;
+  }
+  section.services .services-left .services-header {
+    font-size: 3rem;
+  }
+  section.packages .packages-header {
+    font-size: 3rem;
+  }
+  section.packages .packages-info {
+    font-size: 1.25rem;
+  }
+  section.packages .packages-cards {
+    margin-inline: 8rem;
+  }
+  section.footer footer .footer-header {
+    font-size: 2.5rem;
+  }
+  section.footer footer .footer-info {
+    font-size: 1.25rem;
+  }
+  section.footer footer a.button {
+    font-size: 1.5rem;
+  }
+  section.footer footer .footer-logo {
+    font-size: 8rem;
+  }
+  section.footer footer .footer-infobox {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    font-size: 1.25rem;
   }
 }
 @media screen and (min-width: 850px) and (max-width: 949px) {
@@ -913,6 +1126,9 @@ section.footer .footer-copyright {
     height: 13rem;
     width: auto;
   }
+  section.packages .packages-cards {
+    margin-inline: 12rem;
+  }
 }
 @media screen and (min-width: 1157px) {
   section.services .services-right {
@@ -927,7 +1143,46 @@ section.footer .footer-copyright {
     flex-direction: row;
   }
   section.packages .packages-cards .packages-cards--card {
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
     width: calc(50% - 10px - 1px);
+  }
+  .package-height-fix {
+    height: var(--package-height-fix);
+  }
+  section.footer {
+    padding-block: 3rem;
+  }
+  section.footer footer {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    flex-direction: row-reverse;
+    margin-block: 0;
+    gap: 5rem;
+  }
+  section.footer footer .footer-left {
+    width: 45%;
+  }
+  section.footer footer .footer-left .footer-header {
+    font-size: 3.5rem;
+    margin-inline: 0;
+  }
+  section.footer footer .footer-divider {
+    position: absolute;
+    left: 50%;
+    height: 35rem;
+    width: 0.25rem;
+    background-color: white;
+    border-radius: 5rem;
+  }
+  section.footer footer .footer-right .footer-logo {
+    text-align: left;
+  }
+  section.footer footer .footer-right .footer-infobox {
+    font-size: 1.125rem;
+    flex-direction: row;
   }
 }
 @media screen and (min-width: 1415px) {
@@ -958,6 +1213,11 @@ section.footer .footer-copyright {
 @media screen and (min-width: 500px) and (max-width: 699px) {
   section.hero .hero-top .hero-top--header {
     margin-inline: 3rem;
+  }
+}
+@media screen and (min-width: 1222px) {
+  section.footer footer .footer-right .footer-infobox {
+    font-size: 1.25rem;
   }
 }
 @media screen and (max-width: 1415px) {

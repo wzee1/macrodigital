@@ -21,6 +21,12 @@ openPhased.addEventListener("click", () => {
    if (navToggle.checked == true) { navToggle.checked = !navToggle.checked }
 });
 
+// Making all the Package cards the same height
+const packageCards = Array.from(document.querySelectorAll(".packages-cards--card"));
+const maxHeightOfPackageCard = Math.max(...packageCards.map(card => card.offsetHeight));
+
+document.documentElement.style.setProperty("--package-height-fix", maxHeightOfPackageCard + "px");
+
 // -------------
 // -------------
 // Scroll Reveal
