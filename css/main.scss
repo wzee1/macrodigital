@@ -96,6 +96,9 @@ html {
 
    // For bug fix
    --package-height-fix: ; // Set in JS
+
+   // Nav fix
+   --horizontal-margin: 260px;
 }
 
 body.dark-theme {
@@ -1501,6 +1504,15 @@ section.footer {
 }
 
 @media screen and (min-width: 1157px) { // Services row
+   section.hero {
+      .hero-top {
+         .hero-top--img {
+            width: 40rem;
+            height: auto;
+         }
+      }
+   }
+   
    section.services {
       .services-right {
          max-width: unset;
@@ -1647,6 +1659,12 @@ section.footer {
 @media screen and (min-width: 2560px) {
    body {
       zoom: calc(2560/1920);
+   }
+
+   header.nav-desktop {
+      padding-inline: calc(var(--horizontal-margin) + 2rem);
+      justify-content: flex-start;
+      gap: 43rem;
    }
 }
 

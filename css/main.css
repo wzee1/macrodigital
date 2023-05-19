@@ -89,6 +89,7 @@ html {
   --font-heading: "Poppins", serif;
   --nav-font-size: 10vmin;
   --package-height-fix: ;
+  --horizontal-margin: 260px;
 }
 
 body.dark-theme {
@@ -1131,6 +1132,10 @@ section.footer .footer-infobox .footer-copyright {
   }
 }
 @media screen and (min-width: 1157px) {
+  section.hero .hero-top .hero-top--img {
+    width: 40rem;
+    height: auto;
+  }
   section.services .services-right {
     max-width: unset;
     align-items: baseline;
@@ -1228,6 +1233,11 @@ section.footer .footer-infobox .footer-copyright {
 @media screen and (min-width: 2560px) {
   body {
     zoom: 1.3333333333;
+  }
+  header.nav-desktop {
+    padding-inline: calc(var(--horizontal-margin) + 2rem);
+    justify-content: flex-start;
+    gap: 43rem;
   }
 }
 @media screen and (min-width: 3840px) {

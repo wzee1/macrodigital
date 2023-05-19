@@ -27,38 +27,12 @@ const maxHeightOfPackageCard = Math.max(...packageCards.map(card => card.offsetH
 
 document.documentElement.style.setProperty("--package-height-fix", maxHeightOfPackageCard + "px");
 
-// -------------
-// -------------
-// Scroll Reveal
-// -------------
-// -------------
-
-if (screen.width <= 320) {
-   ScrollReveal({
-      mobile: false
-   });
-} else {
-   ScrollReveal({
-      origin: 'top',
-      distance: '32px',
-      duration: 2000,
-      delay: 400,
-   });
+// Nav fix
+function updateHorizontalMargin() {
+   const hero = document.querySelector('.hero');
+   const computedStyle = getComputedStyle(hero);
+   const horizontalMargin = computedStyle.marginInlineStart;
+   document.documentElement.style.setProperty('--horizontal-margin', horizontalMargin);
 }
-
-ScrollReveal().reveal('.hero__text');
-
-ScrollReveal().reveal('.features__card',
-                     {delay: 500, origin: 'bottom'})
-
-ScrollReveal().reveal('.hero__illustration',
-            {delay: 1000, origin: 'right'});
-
-ScrollReveal().reveal('.bestSeller__text, .subOnly__image--container, .upComing__text, .signUp__image',
-            {delay: 500, origin: 'right'});
-
-ScrollReveal().reveal('.bestSeller__illustration, .subOnly__text, .upComing__image, .signUp__text',
-            {delay: 500, origin: 'left'});
-
-ScrollReveal().reveal('.subOnly__text::before, .subOnly__text::after, .signUp__text::before, signUp__text::after',
-         {delay: 1000, origin: 'left'});
+ 
+window.addEventListener('resize', updateHorizontalMargin);
